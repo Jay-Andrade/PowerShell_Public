@@ -40,3 +40,5 @@ ForEach($exchangegroupmember  in $exchangegroupmembers) {
         Write-Host $_ -f Red
     }
 }
+
+Remove-Item C:\temp\aadgroup.csv
