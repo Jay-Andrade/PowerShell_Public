@@ -14,7 +14,8 @@ Connect-AzureAD
 Connect-ExchangeOnline
 
 #Gather information from user
-$aadgroup = Read-Host "Enter name of AzureADGroup:"
+$aadgroup = Read-Host "Enter name of existing AzureADGroup"
+Write-Host ""
 $exchangegroupname = Read-Host "Enter Display Name for new Mail Enabled Security Group"
 $exchangegroupalias = Read-Host "Enter alias for new Mail Enabled Security Group"
 $exchangegroupsmtp = Read-Host "Enter the Primary SMTP Address for the new Mail Enabled Security Group"
