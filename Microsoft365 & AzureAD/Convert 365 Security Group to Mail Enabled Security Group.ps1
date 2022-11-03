@@ -42,3 +42,7 @@ ForEach($exchangegroupmember  in $exchangegroupmembers) {
 }
 
 Remove-Item C:\temp\aadgroup.csv
+
+Write-Host ""
+Write-Host "$exchangegroupsmtp created successfully." -f Green
+Write-Host "You must manually hide the group from GAL if needed." -f Yellow
