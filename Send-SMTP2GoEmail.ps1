@@ -1,3 +1,5 @@
+#Contributors: Briangig
+
 function Send-SMTP2GoEmail {
     $API_key = Read-Host "Enter API key for SMTP2Go"
 
