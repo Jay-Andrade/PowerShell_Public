@@ -24,7 +24,7 @@ $aadgroupid = Split-Var(Get-AzureADGroup -SearchString $aadgroup | select Object
 Get-AzureADGroupMember -ObjectId $aadgroupid | select mail | Export-CSV 'C:\temp\aadgroup.csv'
 
 #Create new Mail Enabled Security Group (MESG)
-New-DistributionGroup -Name $exchangegroupname -Alias $exchangegroupalias -Type "Security" -PrimarySmtpAddress $exchangegroupsmtp
+New-DistributionGroup -Name $exchangegroupname -Alias $exchangegroupalias -Type "Security" -PrimarySmtpAddress $exchangegroupsmtp -HiddenGroupMembershipEnabled -MemberDepartRestriction 'Closed' -MemberJoinRestriction 'Closed'
 
 #Import members then add each one to new MESG
 $exchangegroupmembers = Import-CSV 'C:\temp\aadgroup.csv'
