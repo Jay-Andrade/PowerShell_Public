@@ -1,5 +1,8 @@
 #Contributors: Briangig
 
+#LEGACY - Moved to Send-SMTPMessage function in SAToolkit
+#https://github.com/Jay-Andrade/SAToolkit/blob/main/Functions/Send-SMTPMessage.ps1
+
 function Send-SMTP2GoEmail {
     $API_key = Read-Host "Enter API key for SMTP2Go"
 
