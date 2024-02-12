@@ -2,7 +2,7 @@ Import-Module "SAToolkit"
 
 #Search for last RunProfileName matching Export (Search for logs in the range of the last completed scan)
 #Export is the last profile to be run as a part of a syncronization so using the last export time will give us the last time the sync ran in full
-#Prevents N-Central monitor flapping due to a scan happening during a syncronization and any potential errors not happening yet in that cycle
+#Prevents monitor flapping due to a scan happening during a syncronization and any potential errors not happening yet in that cycle
 $lastSyncStart = (Get-ADSyncRunProfileResult | Sort-Object RunNumber,CurrentStepNumber -Descending | Select-Object -First 3 | Where-Object -FilterScript {$_.RunProfileName -like 'Export'}).StartDate
 
 $events = (Get-WinEvent -FilterHashtable @{ProviderName='ADSync'; StartTime=$lastSyncStart} -ErrorAction SilentlyContinue)
